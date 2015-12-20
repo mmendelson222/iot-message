@@ -1,0 +1,33 @@
+IOT quick start Documentation incorrect. 
+
+Verify MQTT Subscribe and Publish
+http://docs.aws.amazon.com/iot/latest/developerguide/verify-pub-sub.html
+The topic referred to in both Mosquitto commands should read "topics/test", not topic/test. 
+
+Configure and Test Rules
+http://docs.aws.amazon.com/iot/latest/developerguide/config-and-test-rules.html
+There's a terminology issue in the DynamoDB table.  
+"The DynamoDB table must have a hash key of type String named "topic" and a range key of type String named "timestamp."
+hash key = partition key
+range key = sort key
+
+So in the description it would be helpful to add something like, "set up a dynamodb table called sampleTable with a partition key field called "key" and a sort key field called "timestamp".
+Also there is a correction to the JSON.  hashKeyField and hashKeyValue should read as follows:
+"hashKeyField": "topic",
+"hashKeyValue": "${topic()}",
+
+Use the Device Registry and Device Shadows
+http://docs.aws.amazon.com/iot/latest/developerguide/registry-and-shadows.html
+Under the Simulate a Device heading: 
+When sending through Mosqitto, do NOT use enclose the topic in quotes.  So: 
+..... -t '$aws/things/lightbulb1/shadow/update' .....  should be: 
+..... -t $aws/things/lightbulb1/shadow/update .....  
+I also found this on the AWS forums: https://forums.aws.amazon.com/thread.jspa?messageID=682387&#682387
+
+
+There is inconsistent terminology in the section which sets upa rule for insert message into dynamodb.  The instructions read:  "The DynamoDB table must have both a Partition key of type String and a sort key of type String configured".
+You might want to make note of the fact that these are called Hash and Range fields in the rule definition json and interface.  
+
+In the console, you can't delete a thing unless it is detached from its certificate.  If deletion fails, no error message is displayed. 
+
+

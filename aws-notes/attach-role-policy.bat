@@ -1,0 +1,1 @@
+aws iam attach-role-policy --role-name iot-actions-role --policy-arn arn:aws:iam::000000000000:policy/iot-actions-policy

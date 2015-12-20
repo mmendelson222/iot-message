@@ -1,0 +1,42 @@
+C:\dev\aws\IoT>aws iam create-role --role-name iot-actions-role --assume-role-policy-document file://iot-actions-role-policy.json
+{
+    "Role": {
+        "AssumeRolePolicyDocument": {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Action": "sts:AssumeRole",
+                    "Principal": {
+                        "Service": "iot.amazonaws.com"
+                    },
+                    "Effect": "Allow",
+                    "Sid": ""
+                }
+            ]
+        },
+        "RoleId": "AROAICTV3KYGVKASGQK5W",
+        "CreateDate": "2015-12-05T22:25:38.974Z",
+        "RoleName": "iot-actions-role",
+        "Path": "/",
+        "Arn": "arn:aws:iam::000000000000:role/iot-actions-role"
+    }
+}
+
+C:\dev\aws\IoT>aws iam create-policy --policy-name iot-actions-policy --policy-document file://iot-actions-policy.json
+{
+    "Policy": {
+        "PolicyName": "iot-actions-policy",
+        "CreateDate": "2015-12-05T22:27:29.336Z",
+        "AttachmentCount": 0,
+        "IsAttachable": true,
+        "PolicyId": "ANPAJAFE3P4J4KIJ43LOS",
+        "DefaultVersionId": "v1",
+        "Path": "/",
+        "Arn": "arn:aws:iam::000000000000:policy/iot-actions-policy",
+        "UpdateDate": "2015-12-05T22:27:29.336Z"
+    }
+}
+
+C:\dev\aws\IoT>aws iam attach-role-policy --role-name iot-actions-role --policy-arn "arn:aws:iam::000000000000:policy/io
+t-actions-policy"
+

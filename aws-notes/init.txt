@@ -1,0 +1,28 @@
+Microsoft Windows [Version 6.3.9600]
+(c) 2013 Microsoft Corporation. All rights reserved.
+
+C:\Users\Michael>py --version
+Python 2.7.6
+
+C:\Users\Michael>cd \aws
+The system cannot find the path specified.
+
+C:\Users\Michael>cd \dev\aws
+
+C:\dev\aws\IoT>aws iot create-thing --thing-name "test-thing"
+
+(omitted)
+
+C:\dev\aws\IoT>aws iot describe-certificate --certificate-id cd5d235b0b2c75a41875377ad0beb59a363d13600473cb0e2253861bc1c
+0341a --output text --query certificateDescription
+
+(omitted)
+
+C:\dev\aws\IoT>aws iot attach-thing-principal --thing-name test-thing --principal arn:aws:iot:us-east-1:000000000000:cer
+t/cd5d235b0b2c75a41875377ad0beb59a363d13600473cb0e2253861bc1c0341a
+
+C:\dev\aws\IoT>aws iot describe-endpoint
+{
+    "endpointAddress": "A3KWJ0VBNKR8CV.iot.us-east-1.amazonaws.com"
+}
+
