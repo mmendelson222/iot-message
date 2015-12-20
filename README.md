@@ -8,7 +8,10 @@ Python code to receive a message from AWS iot, using MQTT, and display it on an 
 * add the certificate files necessary for MQTT to the directory /home/pi, and make sure they have the names aws-iot-rootCA.crt, privkey.pem and cert.pem 
 * edit the file iot-message.py and change the endpoint to the appropriate value. 
 
-##Notes
+###Raspberry pi code notes
 The way this works is that the main executable, iot-message.py, listens for updates and will start the process necessary to display text on the OLED device (scroll.py).  It would be straightforward to replace scroll.py if you have another device you want to use. 
 
 In the course of starting and stopping this app, all python processes will be killed (see iot-messages).  So if you're doing anything else with your pi, you have been warned!
+
+##Ancillary code
+The remotes directory contains batch files (most notably publish.bat) which can be used to publish a message to AWS IoT using MQTT.  The aws-notes directory contains batch files and policies which were used in the initial setup. 

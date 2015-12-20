@@ -1,0 +1,1 @@
+aws iot create-topic-rule --rule-name saveToDynamoDB2 --topic-rule-payload file://iot-rule2.json
